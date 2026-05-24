@@ -23,3 +23,8 @@ columns:
     type: number
     description: Total balance across all accounts
     mapped_to: balance
+
+  - name: loyalty_score
+    type: number
+    description: Customer loyalty score
+    mapped_to: loyalty_score
