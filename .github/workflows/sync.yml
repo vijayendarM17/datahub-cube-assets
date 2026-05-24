@@ -1,0 +1,46 @@
+name: Sync Cubes to DataHub
+
+on:
+  push:
+    branches:
+      - master
+      - main
+    paths:
+      - 'cubes/**.yaml'
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install acryl-datahub python-dotenv pyyaml requests
+
+      - name: Find changed cube YAML files
+        id: changed
+        run: |
+          CHANGED=$(git diff --name-only HEAD~1 HEAD -- 'cubes/*.yaml' | tr '\n' ' ')
+          echo "files=$CHANGED" >> $GITHUB_OUTPUT
+          echo "Changed files: $CHANGED"
+
+      - name: Sync each changed cube to DataHub
+        env:
+          DATAHUB_GMS_URL: ${{ secrets.DATAHUB_GMS_URL }}
+          DATAHUB_TOKEN: ${{ secrets.DATAHUB_TOKEN }}
+        run: |
+          for file in ${{ steps.changed.outputs.files }}; do
+            if [ -f "$file" ]; then
+              echo "Ingesting: $file"
+              python3 recipes/ingest.py "$file"
+            fi
+          done

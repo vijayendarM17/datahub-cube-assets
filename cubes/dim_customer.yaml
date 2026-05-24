@@ -1,0 +1,25 @@
+name: dim_customer
+domain: Vijay Domain
+description: Customer dimension cube - tracks customer account information
+snowflake_table: vijay_db.banking.dim_customer
+
+columns:
+  - name: customer_id
+    type: string
+    description: Unique customer identifier
+    mapped_to: customer_id
+
+  - name: customer_name
+    type: string
+    description: Full name of the customer
+    mapped_to: customer_name
+
+  - name: account_type
+    type: string
+    description: Type of bank account
+    mapped_to: account_type
+
+  - name: total_balance
+    type: number
+    description: Total balance across all accounts
+    mapped_to: balance
