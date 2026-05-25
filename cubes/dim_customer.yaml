@@ -61,3 +61,4 @@ columns:
     type: string
     description: Customer preferred contact channel (email, sms, phone)
     mapped_to: preferred_channel
+
