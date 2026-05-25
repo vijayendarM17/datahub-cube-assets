@@ -49,3 +49,8 @@ columns:
     type: date
     description: Date of the customer's most recent login
     mapped_to: last_login_date
+
+  - name: risk_category
+    type: string
+    description: Customer risk category (Low, Medium, High)
+    mapped_to: risk_category
