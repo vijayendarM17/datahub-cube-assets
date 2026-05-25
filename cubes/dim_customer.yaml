@@ -39,3 +39,13 @@ columns:
     type: string
     description: Customer region
     mapped_to: region
+
+  - name: customer_tier
+    type: string
+    description: Customer tier classification (e.g. Gold, Silver, Bronze)
+    mapped_to: customer_tier
+
+  - name: last_login_date
+    type: date
+    description: Date of the customer's most recent login
+    mapped_to: last_login_date
