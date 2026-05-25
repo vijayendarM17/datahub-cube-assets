@@ -54,3 +54,8 @@ columns:
     type: string
     description: Customer risk category (Low, Medium, High)
     mapped_to: risk_category
+
+  - name: preferred_channel
+    type: string
+    description: Customer preferred contact channel (email, sms, phone)
+    mapped_to: preferred_channel
