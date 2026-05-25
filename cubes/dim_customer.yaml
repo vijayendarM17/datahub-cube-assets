@@ -14,10 +14,16 @@ columns:
     description: Full name of the customer
     mapped_to: customer_name
 
-  - name: total_balance
+  - name: account_balance
     type: number
     description: Total balance across all accounts
     mapped_to: balance
+    renamed_from: total_balance
+
+  - name: email
+    type: string
+    description: Customer email address
+    mapped_to: email
 
   - name: loyalty_score
     type: number
