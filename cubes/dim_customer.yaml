@@ -1,6 +1,6 @@
 name: dim_customer
 domain: Vijay Domain
-description: Customer dimension cube - tracks customer account information
+description: Customer dimension cube - tracks customer account information and loyalty metrics
 snowflake_table: vijay_db.banking.dim_customer
 
 columns:
