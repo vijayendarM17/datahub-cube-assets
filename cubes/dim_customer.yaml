@@ -6,7 +6,7 @@ snowflake_tables:
   - vijay_db.banking.customer_profile
 
 columns:
-  - name: customer_id
+  - name: vm_id
     type: string
     description: Unique customer identifier
     mapped_to: customer_id
