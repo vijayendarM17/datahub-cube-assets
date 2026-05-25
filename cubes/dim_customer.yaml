@@ -14,11 +14,6 @@ columns:
     description: Full name of the customer
     mapped_to: customer_name
 
-  - name: account_type
-    type: string
-    description: Type of bank account
-    mapped_to: account_type
-
   - name: total_balance
     type: number
     description: Total balance across all accounts
@@ -28,3 +23,13 @@ columns:
     type: number
     description: Customer loyalty score
     mapped_to: loyalty_score
+
+  - name: credit_score
+    type: number
+    description: Customer credit score
+    mapped_to: credit_score
+
+  - name: region
+    type: string
+    description: Customer region
+    mapped_to: region
