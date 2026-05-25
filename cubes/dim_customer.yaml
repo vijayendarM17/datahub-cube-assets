@@ -27,12 +27,12 @@ columns:
     description: Customer email address
     mapped_to: email
 
-  - name: loyalty_score
+  - name: loyalty_points
     type: number
     description: Customer loyalty score
     mapped_to: loyalty_score
 
-  - name: credit_score
+  - name: credit_rating
     type: number
     description: Customer credit score
     mapped_to: credit_score
